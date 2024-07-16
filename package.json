@@ -17,5 +17,10 @@
 		"astro-font": "^0.0.81",
 		"tailwindcss": "^3.4.4",
 		"typescript": "^5.5.3"
+	},
+	"devDependencies": {
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.0",
+		"prettier-plugin-tailwindcss": "^0.6.5"
 	}
 }
