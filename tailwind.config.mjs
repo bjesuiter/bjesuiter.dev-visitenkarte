@@ -19,7 +19,11 @@ export default {
         motto: ["Playwrite"],
       },
       colors: {
-        "txt-light": colors.slate[50],
+        "foreground-light": colors.slate[50],
+        "codemonument-primary": "#D843EB",
+        "codemonument-banner": "#C704BA",
+        "codemonument-dark": "#5B1F65",
+        "codemonument-light": "#C842DD",
       },
     },
     screens: {
