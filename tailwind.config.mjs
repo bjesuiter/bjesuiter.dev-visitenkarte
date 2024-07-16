@@ -12,8 +12,13 @@ export default {
       backgroundImage: {
         "profile-pic": "url('/2024_profile_pic.jpg')",
       },
+      fontFamily: {
+        headings: ["Rubik"],
+        motto: ["Playwrite"],
+      },
     },
     screens: {
+      sm: "500px",
       md: "860px",
     },
   },

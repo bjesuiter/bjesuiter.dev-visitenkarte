@@ -48,6 +48,16 @@ const { title } = Astro.props;
           selector: "body",
           fallback: "sans-serif",
         },
+        {
+          src: [],
+          name: "Playwrite",
+          // Google Fonts URL
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@200&display=swap",
+          preload: true,
+          display: "swap",
+          fallback: "sans-serif",
+        },
       ]}
     />
     <!-- <div class="tracker"></div> -->
@@ -60,11 +70,10 @@ const { title } = Astro.props;
     --mouseY: 0.5;
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: Rubik, system-ui, sans-serif;
   }
   code {
     font-family:
-      Rubik,
       Menlo,
       Monaco,
       Lucida Console,
