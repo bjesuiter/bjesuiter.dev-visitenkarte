@@ -9,6 +9,9 @@ export default {
           "0 0px 65px rgba(255, 255,255, 0.2)",
         ],
       },
+      backgroundImage: {
+        "profile-pic": "url('/2024_profile_pic.jpg')",
+      },
     },
     screens: {
       md: "860px",
