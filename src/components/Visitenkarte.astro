@@ -44,6 +44,9 @@ interface Props {
     </h2>
 
     <p class="">
+      <h3 class="text-left text-lg font-bold">
+        Meine persönlichen Dev Accounts
+      </h3>
       Du interessierst dich für meine Seite als enthusiastischer Developer? Nice
       - Hier entlang!
       <SocialLink
@@ -73,10 +76,14 @@ interface Props {
     </p>
 
     <p class="">
-      Zur besseren Übersicht habe ich meine ernsthafteren Coding-Abenteuer auf
-      eine eigene Identität ausgelagert. Dazu gehören zum Beispiel meine Deno
-      Libraries und ein paar meiner npm libraries. Der Account wird auf Englisch
-      geführt. Begrüßt mit mir: <span class="font-semibold text-fuchsia-500"
+      <h3 class="text-left text-lg font-bold">
+        Meine Internet-Identität: CodeMonument (EN)
+      </h3>
+      Zur besseren Übersicht habe ich meine ernsthafteren Coding-Abenteuer auf eine
+      eigene Identität ausgelagert. Dazu gehören zum Beispiel meine Deno Libraries
+      und ein paar meiner npm libraries. Der Account wird auf Englisch geführt, weil
+      die internationale Community meinen Nachnamen nicht richtig aussprechen kann
+      :D. Begrüßt mit mir: <span class="font-semibold text-fuchsia-500"
         >CodeMonument</span
       >!
       <SocialLink
@@ -106,9 +113,10 @@ interface Props {
     </p>
 
     <p>
-      Möglicherweise interessiert sich eine kleine Gruppe von Menschen auch für
-      meine Business-Profile, diese sollen natürlich auch nicht fehlen (Achtung:
-      dort antworte ich seltenst):
+      <h3 class="text-left text-lg font-bold">Meine Business-Profile</h3>
+      Möglicherweise interessiert sich eine kleine Gruppe von Menschen auch für meine
+      Business-Profile, diese sollen natürlich auch nicht fehlen (Achtung: dort antworte
+      ich seltenst!):
       <SocialLink
         iconName="ph:linkedin-logo-fill"
         href="https://www.linkedin.com/in/bjesuiter/"
@@ -123,21 +131,28 @@ interface Props {
       />
     </p>
 
-    <div>
-      <h2 class="text-center text-lg font-bold">
-        Wer sich für mich privat interessiert
-      </h2>
-      <div class="flex flex-row flex-wrap justify-center">
-        <Icon name="bxl:github" class="text-foreground-light m-4 text-4xl" />
-        <Icon
-          name="ph:x-logo-fill"
-          class="text-foreground-light m-4 text-4xl"
-        />
-        <Icon
-          name="ph:linkedin-logo-fill"
-          class="text-foreground-light m-4 text-4xl"
-        />
-      </div>
-    </div>
+    <p>
+      <h3 class="text-left text-lg font-bold">Mehr Privates</h3>
+      Du bist privat hier? Sehr cool, ich auch! Hier ein paar Links zu meinen Instagram
+      Kanälen:
+      <SocialLink
+        iconName="ph:instagram-logo"
+        href="https://www.instagram.com/bjesuiterphotography/"
+        label="instagram: bjesuiterphotography (eher kunstvolle Fotos)"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ph:instagram-logo"
+        href="https://www.instagram.com/foodyprn.de/"
+        label="instagram: foodyprn.de (mein FoodPorn Channel)"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ph:instagram-logo"
+        href="https://www.instagram.com/bjesuiter"
+        label="instagram: bjesuiter (nur persönliche Freunde)"
+        profile="private"
+      />
+    </p>
   </section>
 </div>
