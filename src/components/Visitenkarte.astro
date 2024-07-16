@@ -9,12 +9,21 @@ interface Props {
 ---
 
 <div
-  class="md:drop-shadow-glow relative aspect-[16/10] w-full min-w-[300px] overflow-hidden rounded-b-lg border-b-2 border-white bg-slate-800 p-4 text-slate-50 shadow-lg shadow-slate-200/50 md:mx-auto md:my-10 md:w-4/5 md:rounded-lg md:border-2"
+  class="md:drop-shadow-glow w-full min-w-[300px] bg-slate-800 text-slate-50 shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:aspect-[16/10] md:w-4/5 md:overflow-hidden md:rounded-lg md:border-2 md:p-4"
 >
-  <h1 class="text-4xl font-normal">Benjamin Jesuiter</h1>
+  <h1 class="mx-auto w-max rounded-md pt-4 text-6xl font-normal md:text-left">
+    Benjamin Jesuiter
 
+    <!-- white shine -->
+  </h1>
+  <!-- <div class="h-8 bg-gradient-to-b from-slate-600 to-slate-800"></div> -->
+
+  <div
+    class="mb-12 h-6 rounded-lg border-b-2 border-white shadow-lg shadow-slate-200/50"
+  >
+  </div>
   <img
     src="/2024_profile_pic.jpg"
-    class="absolute right-0 top-0 w-1/2 object-cover"
+    class="md:absolute md:right-0 md:top-0 md:w-1/2 md:object-cover"
   />
 </div>
