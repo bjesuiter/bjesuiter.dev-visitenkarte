@@ -12,7 +12,7 @@ interface Props {
 ---
 
 <div
-  class="md:drop-shadow-glow text-foreground-light w-full min-w-[300px] shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:aspect-[16/10] md:w-4/5 md:overflow-hidden md:rounded-lg md:border-2 md:bg-slate-800 md:p-4"
+  class="w-full min-w-[300px] text-foreground-light shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:h-4/5 md:w-4/5 md:max-w-[830px] md:overflow-y-auto md:rounded-lg md:border-2 md:bg-slate-800 md:p-4 md:drop-shadow-glow"
 >
   <header class="flex flex-col items-center gap-12">
     <h1
@@ -22,7 +22,7 @@ interface Props {
     </h1>
 
     <div
-      class="drop-shadow-glow bg-profile-pic h-[250px] w-[250px] rounded-full border-2 border-white bg-cover bg-top bg-no-repeat"
+      class="h-[250px] w-[250px] rounded-full border-2 border-white bg-profile-pic bg-cover bg-top bg-no-repeat drop-shadow-glow"
     >
     </div>
     <!-- <img
@@ -31,7 +31,7 @@ interface Props {
   /> -->
 
     <!-- Tagline -->
-    <div class="font-motto text-center sm:text-lg md:text-xl">
+    <div class="text-center font-motto sm:text-lg md:text-xl">
       Make the web the best place it can be!
       <!-- => this is the one for CodeMonument -->
       <!-- Passionate Web Developer, Cloud Architect, & Full-Stack Solutions Consultant -->
@@ -84,7 +84,7 @@ interface Props {
       und ein paar meiner npm libraries. Der Account wird auf Englisch geführt, weil
       die internationale Community meinen Nachnamen nicht richtig aussprechen kann
       :D. Begrüßt mit mir: <span
-        class="text-codemonument-banner inline font-semibold">CodeMonument</span
+        class="inline font-semibold text-codemonument-banner">CodeMonument</span
       >
       <SocialLink
         iconName="bxl:github"
