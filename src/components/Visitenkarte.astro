@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import SocialLink from "./Social-Link.astro";
 
 interface Props {
   // title: string;
@@ -11,30 +12,132 @@ interface Props {
 ---
 
 <div
-  class="md:drop-shadow-glow text-txt-light w-full min-w-[300px] shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:aspect-[16/10] md:w-4/5 md:overflow-hidden md:rounded-lg md:border-2 md:bg-slate-800 md:p-4"
+  class="md:drop-shadow-glow text-foreground-light w-full min-w-[300px] shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:aspect-[16/10] md:w-4/5 md:overflow-hidden md:rounded-lg md:border-2 md:bg-slate-800 md:p-4"
 >
-  <h1
-    class="w-full rounded-md border-none border-white pb-4 pt-4 text-center text-2xl font-normal shadow-none shadow-slate-200/50 sm:text-3xl md:ml-4 md:text-left"
-  >
-    Benjamin Jesuiter
-  </h1>
+  <header class="flex flex-col items-center gap-12">
+    <h1
+      class="rounded-md border-none border-white pb-4 pt-4 text-2xl font-normal shadow-none shadow-slate-200/50 sm:text-3xl md:ml-4 md:text-left"
+    >
+      Benjamin Jesuiter
+    </h1>
 
-  <div
-    class="drop-shadow-glow bg-profile-pic mx-auto my-12 h-[250px] w-[250px] rounded-full border-2 border-white bg-cover bg-top bg-no-repeat"
-  >
-  </div>
-  <!-- <img
+    <div
+      class="drop-shadow-glow bg-profile-pic h-[250px] w-[250px] rounded-full border-2 border-white bg-cover bg-top bg-no-repeat"
+    >
+    </div>
+    <!-- <img
     src="/2024_profile_pic.jpg"
     class="md:absolute md:right-0 md:top-0 md:w-1/2 md:object-cover"
   /> -->
 
-  <!-- Subline -->
-  <div class="font-motto text-center sm:text-lg md:text-xl">
-    Make the web the best place it can be!
-  </div>
+    <!-- Tagline -->
+    <div class="font-motto text-center sm:text-lg md:text-xl">
+      Make the web the best place it can be!
+      <!-- => this is the one for CodeMonument -->
+      <!-- Passionate Web Developer, Cloud Architect, & Full-Stack Solutions Consultant -->
+    </div>
+  </header>
 
-  <!-- Row of Icons -->
-  <div>
-    <Icon name="bxl:github" class="text-emerald-700" />
-  </div>
+  <section class="flex flex-col gap-6 p-4">
+    <h2 class="mt-4 py-4 text-2xl font-normal sm:text-3xl md:text-left">
+      Wo man mich findet
+    </h2>
+
+    <p class="">
+      Du interessierst dich für meine Seite als enthusiastischer Developer? Nice
+      - Hier entlang!
+      <SocialLink
+        iconName="bxl:github"
+        href="https://github.com/bjesuiter"
+        label="github: bjesuiter"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ph:x-logo-fill"
+        href="https://x.com/jesuiterb"
+        label="x: jesuiterb"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ion:logo-npm"
+        href="https://www.npmjs.com/~bjesuiter"
+        label="npm: bjesuiter"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ion:logo-stackoverflow"
+        href="https://stackoverflow.com/users/5411086/benjamin-jesuiter"
+        label="stackoverflow"
+        profile="private"
+      />
+    </p>
+
+    <p class="">
+      Zur besseren Übersicht habe ich meine ernsthafteren Coding-Abenteuer auf
+      eine eigene Identität ausgelagert. Dazu gehören zum Beispiel meine Deno
+      Libraries und ein paar meiner npm libraries. Der Account wird auf Englisch
+      geführt. Begrüßt mit mir: <span class="font-semibold text-fuchsia-500"
+        >CodeMonument</span
+      >!
+      <SocialLink
+        iconName="bxl:github"
+        href="https://github.com/codemonument"
+        label="github: codemonument"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ph:x-logo-fill"
+        href="https://x.com/codemonument"
+        label="x: codemonument"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ion:logo-npm"
+        href="https://www.npmjs.com/org/codemonument"
+        label="npm: codemonument"
+        profile="private"
+      />
+      <SocialLink
+        iconName="simple-icons:jsr"
+        href="https://jsr.io/@codemonument"
+        label="jsr: @codemonument"
+        profile="private"
+      />
+    </p>
+
+    <p>
+      Möglicherweise interessiert sich eine kleine Gruppe von Menschen auch für
+      meine Business-Profile, diese sollen natürlich auch nicht fehlen (Achtung:
+      dort antworte ich seltenst):
+      <SocialLink
+        iconName="ph:linkedin-logo-fill"
+        href="https://www.linkedin.com/in/bjesuiter/"
+        label="linkedin: bjesuiter"
+        profile="private"
+      />
+      <SocialLink
+        iconName="ion:logo-xing"
+        href="https://www.xing.com/profile/Benjamin_Jesuiter/cv"
+        label="xing: bjesuiter"
+        profile="private"
+      />
+    </p>
+
+    <div>
+      <h2 class="text-center text-lg font-bold">
+        Wer sich für mich privat interessiert
+      </h2>
+      <div class="flex flex-row flex-wrap justify-center">
+        <Icon name="bxl:github" class="text-foreground-light m-4 text-4xl" />
+        <Icon
+          name="ph:x-logo-fill"
+          class="text-foreground-light m-4 text-4xl"
+        />
+        <Icon
+          name="ph:linkedin-logo-fill"
+          class="text-foreground-light m-4 text-4xl"
+        />
+      </div>
+    </div>
+  </section>
 </div>

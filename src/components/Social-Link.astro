@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  iconName: string;
+  href: string;
+  label: string;
+  profile: "private" | "codemonument";
+}
+
+const { href, iconName, label, profile } = Astro.props satisfies Props;
+---
+
+<a
+  class={"hover:drop-shadow-glow flex flex-row flex-wrap items-center"}
+  href={href}
+>
+  <Icon
+    name={iconName}
+    class:list={[
+      "text-foreground-light my-4 mr-4 text-4xl",
+      { "text-codemonument-primary": profile === "codemonument" },
+    ]}
+  />
+  <span
+    class:list={[
+      "font-semibold",
+      { "text-codemonument-primary": profile === "codemonument" },
+    ]}>{label}</span
+  >
+</a>

@@ -11,3 +11,10 @@
 ## TODOs
 
 - optimize images: https://www.youtube.com/watch?v=kGGnanUKM00
+
+## References
+
+- Icon Packs used:
+  - @iconify-json/ph (Phosphor Icons)
+  - @iconify-json/logos
+  - @iconify-json/ion
