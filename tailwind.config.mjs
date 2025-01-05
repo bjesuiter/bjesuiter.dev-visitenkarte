@@ -1,4 +1,6 @@
 import { slate } from "tailwindcss/colors";
+
+// Docs for tailwindcssMotion by Rombo: https://docs.rombo.co/tailwind
 import tailwindcssMotion from "tailwindcss-motion";
 
 /** @type {import('tailwindcss').Config} */
