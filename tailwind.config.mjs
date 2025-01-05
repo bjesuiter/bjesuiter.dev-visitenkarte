@@ -1,4 +1,4 @@
-import colors from "tailwindcss/colors";
+import { slate } from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -19,7 +19,7 @@ export default {
         motto: ["Playwrite"],
       },
       colors: {
-        "foreground-light": colors.slate[50],
+        "foreground-light": slate[50],
         "codemonument-primary": "#D843EB",
         "codemonument-banner": "#C704BA",
         "codemonument-dark": "#5B1F65",
