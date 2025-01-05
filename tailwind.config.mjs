@@ -1,4 +1,5 @@
 import { slate } from "tailwindcss/colors";
+import tailwindcssMotion from "tailwindcss-motion";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -31,5 +32,5 @@ export default {
       md: "860px",
     },
   },
-  plugins: [],
+  plugins: [tailwindcssMotion],
 };
