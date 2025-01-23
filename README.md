@@ -11,6 +11,8 @@
 ## TODOs
 
 - optimize images: https://www.youtube.com/watch?v=kGGnanUKM00
+- add a full menu with "BJesuiter", "CodeMonument" und "Impressum"
+- add complete localization as english and german!
 
 ## References
 
