@@ -9,7 +9,8 @@
     "upgrade": "bunx --bun @astrojs/upgrade",
     "preview-deno": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
     "preview": "bunx --bun astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "surge ./dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -32,6 +33,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "surge": "^0.24.6",
     "tailwindcss-motion": "^1.0.1"
   }
 }
