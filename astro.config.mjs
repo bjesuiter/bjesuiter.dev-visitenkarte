@@ -17,8 +17,9 @@ export default defineConfig({
       },
     }),
   ],
-  output: "server",
-  adapter: deno(),
+  output: "static",
+  // output: "server",
+  // adapter: deno(),
   // vite config needed for astro-font
   vite: {
     ssr: {

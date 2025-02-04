@@ -7,7 +7,8 @@
     "start": "bunx --bun astro dev",
     "build": "bunx --bun astro check && bunx --bun astro build",
     "upgrade": "bunx --bun @astrojs/upgrade",
-    "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
+    "preview-deno": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
+    "preview": "bunx --bun astro preview",
     "astro": "astro"
   },
   "dependencies": {
