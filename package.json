@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/netlify": "^6.1.0",
     "@astrojs/tailwind": "^6.0.0",
     "@iconify-json/bxl": "^1.2.2",
     "@iconify-json/ion": "^1.2.2",
