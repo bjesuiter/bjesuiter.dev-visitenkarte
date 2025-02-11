@@ -1,9 +1,6 @@
 import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
-
 import icon from "astro-icon";
-
-import netlify from "@astrojs/netlify";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,8 +16,7 @@ export default defineConfig({
     }),
   ],
   // output: "static",
-  output: "server",
-  adapter: netlify(),
+  output: "static",
   // vite config needed for astro-font
   vite: {
     ssr: {
