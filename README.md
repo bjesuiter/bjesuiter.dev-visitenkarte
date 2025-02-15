@@ -20,3 +20,13 @@
   - @iconify-json/ph (Phosphor Icons)
   - @iconify-json/logos
   - @iconify-json/ion
+
+---
+
+# Repo Log
+
+## 2025-02-15 Upgrade tailwind to v4
+
+```bash
+bunx --bun @tailwindcss/upgrade
+```
