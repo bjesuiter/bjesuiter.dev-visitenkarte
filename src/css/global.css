@@ -7,8 +7,9 @@
 }
 
 @theme {
-  --drop-shadow-glow02: 0px 65px rgba(255, 255, 255, 0.2);
-  --drop-shadow-glow035: 0 0px 20px rgba(255, 255, 255, 0.35);
+  /* This glow is not working right now */
+  --drop-shadow-glow02:
+    0px 65px rgba(255, 255, 255, 0.2), 0 0px 20px rgba(255, 255, 255, 0.35);
 
   --font-headings: "Rubik", sans-serif;
   --font-motto: "Playwrite", sans-serif;
