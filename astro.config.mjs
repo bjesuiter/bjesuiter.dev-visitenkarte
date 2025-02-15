@@ -1,11 +1,10 @@
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
     icon({
       include: {
         bxl: ["github"],
@@ -19,6 +18,7 @@ export default defineConfig({
   output: "static",
   // vite config needed for astro-font
   vite: {
+    plugins: [tailwindcss()],
     ssr: {
       external: [
         "node:buffer",

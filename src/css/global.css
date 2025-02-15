@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-motion";
+
+@layer base {
+  @import "./reset.css";
+}
+
+@theme {
+  --drop-shadow-glow02: 0px 65px rgba(255, 255, 255, 0.2);
+  --drop-shadow-glow035: 0 0px 20px rgba(255, 255, 255, 0.35);
+
+  --font-headings: "Rubik", sans-serif;
+  --font-motto: "Playwrite", sans-serif;
+
+  --color-foreground-light: var(--color-slate-50);
+  --color-codemonument-primary: #d843eb;
+  --color-codemonument-banner: #c704ba;
+  --color-codemonument-dark: #5b1f65;
+  --color-codemonument-light: #c842dd;
+
+  --screens-sm: 500px;
+  --screens-md: 860px;
+}

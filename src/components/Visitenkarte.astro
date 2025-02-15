@@ -1,7 +1,5 @@
 ---
 import SocialLink from "./Social-Link.astro";
-import profilePic from "../assets/2024_profile_pic.jpg";
-import { Image } from "astro:assets";
 
 interface Props {
   // title: string;
@@ -13,11 +11,13 @@ interface Props {
 ---
 
 <div
-  class="w-full min-w-[300px] text-foreground-light shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:h-4/5 md:w-4/5 md:max-w-[830px] md:overflow-y-auto md:rounded-lg md:border-2 md:bg-slate-800 md:p-4 md:drop-shadow-glow"
+  class="text-foreground-light md:drop-shadow-glow w-full min-w-[300px] shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:h-4/5 md:w-4/5 md:max-w-[830px] md:overflow-y-auto md:rounded-lg md:border-2 md:bg-slate-800 md:p-4"
 >
-  <header class="flex flex-col items-center gap-12 motion-translate-x-in-[-22%] motion-translate-y-in-[-43%]">
+  <header
+    class="motion-translate-x-in-[-22%] motion-translate-y-in-[-43%] flex flex-col items-center gap-12"
+  >
     <h1
-      class="rounded-md border-none border-white pb-4 pt-4 text-2xl font-normal shadow-none shadow-slate-200/50 sm:text-3xl md:ml-4 md:text-left"
+      class="rounded-md border-none border-white pt-4 pb-4 text-2xl font-normal shadow-none shadow-slate-200/50 sm:text-3xl md:ml-4 md:text-left"
     >
       Benjamin Jesuiter
     </h1>
@@ -30,7 +30,7 @@ interface Props {
       height={250}
     /> -->
     <div
-      class="motion-translate-x-in-[-115%] motion-translate-y-in-[-53%] h-[250px] w-[250px] rounded-full border-2 border-white bg-profile-pic bg-cover bg-top bg-no-repeat drop-shadow-glow"
+      class="motion-translate-x-in-[-115%] motion-translate-y-in-[-53%] drop-shadow-glow h-[250px] w-[250px] rounded-full border-2 border-white bg-[url('/2024_profile_pic.jpg')] bg-cover bg-top bg-no-repeat"
     >
     </div>
     <!-- <img
@@ -39,7 +39,7 @@ interface Props {
   /> -->
 
     <!-- Tagline -->
-    <div class="text-center font-motto sm:text-lg md:text-xl">
+    <div class="font-motto text-center sm:text-lg md:text-xl">
       Make the web the best place it can be!
       <!-- => this is the one for CodeMonument -->
       <!-- Passionate Web Developer, Cloud Architect, & Full-Stack Solutions Consultant -->
@@ -92,7 +92,7 @@ interface Props {
       und ein paar meiner npm libraries. Der Account wird auf Englisch geführt, weil
       die internationale Community meinen Nachnamen nicht richtig aussprechen kann
       :D. Begrüßt mit mir: <span
-        class="inline font-semibold text-codemonument-banner">CodeMonument</span
+        class="text-codemonument-banner inline font-semibold">CodeMonument</span
       >
       <SocialLink
         iconName="bxl:github"
