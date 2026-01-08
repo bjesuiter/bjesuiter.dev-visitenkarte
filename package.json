@@ -16,26 +16,27 @@
     "rollout": "bun run build && bun run deploy"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/tailwind": "^6.0.0",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/bxl": "^1.2.2",
-    "@iconify-json/ion": "^1.2.2",
-    "@iconify-json/logos": "^1.2.4",
+    "@iconify-json/ion": "^1.2.6",
+    "@iconify-json/logos": "^1.2.10",
     "@iconify-json/ph": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.24",
-    "@tailwindcss/vite": "^4.0.6",
-    "astro": "^5.3.0",
-    "astro-font": "^1.0.0",
+    "@iconify-json/simple-icons": "^1.2.65",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.7",
+    "astro-font": "^1.1.0",
     "astro-icon": "^1.1.5",
     "sharp": "^0.33.5",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.3"
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "prettier": "^3.5.1",
+    "oxlint": "^1.38.0",
+    "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss-motion": "^1.1.0"
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss-motion": "^1.1.1"
   }
 }
