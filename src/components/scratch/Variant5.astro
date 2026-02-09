@@ -267,15 +267,14 @@ import { identity, profileSections } from "../../data/profiles";
     }
   }
 
-  @media (min-width: 970px) {
+  @media (min-width: 951px) {
     .v5-hero-bg {
       top: 1rem;
       right: 1rem;
-      bottom: 1rem;
+      bottom: auto;
       left: auto;
-      width: 485px;
-      max-width: calc(50% - 1rem);
-      height: auto;
+      width: min(420px, calc(46% - 1rem));
+      height: calc(100% - 2rem);
       border-radius: 18px;
       object-position: center 12%;
     }
