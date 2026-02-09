@@ -1,5 +1,12 @@
 # Visitenkarte
 
+## Original Concept
+
+Initial idea for this project: build the page like a real-world contact card with
+interactive 3D tilt that reacts to mouse movement. That concept is intentionally
+parked for now because the interaction complexity was too high for the first
+iteration.
+
 ## Icon Usage
 
 - Find Icons here: `https://icon-sets.iconify.design/?query=astro`
