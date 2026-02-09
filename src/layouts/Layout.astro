@@ -14,7 +14,7 @@ interface Props {
 const {
   title,
   description = "Persönliche Landingpage von Benjamin Jesuiter mit Links zu Development-, Business- und Social-Profilen.",
-  image = "/2024_profile_pic.jpg",
+  image = "/social-preview-v2.jpg",
   noindex = false,
   canonicalPath,
   lang = "de",
@@ -68,11 +68,16 @@ const socialImageURL = new URL(image, site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:image" content={socialImageURL.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Benjamin Jesuiter" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageURL.href} />
+    <meta name="twitter:image:alt" content="Benjamin Jesuiter" />
     <title>{title}</title>
     <!-- <script type="text/javascript">
 			const pos = {x: 0, y: 0};
