@@ -8,7 +8,12 @@ export default defineConfig({
     icon({
       include: {
         bxl: ["github"],
-        ph: ["x-logo-fill", "linkedin-logo-fill", "instagram-logo"],
+        ph: [
+          "x-logo-fill",
+          "linkedin-logo-fill",
+          "instagram-logo",
+          "globe-fill",
+        ],
         ion: ["logo-xing", "logo-stackoverflow", "logo-npm"],
         "simple-icons": ["jsr", "bluesky"],
       },

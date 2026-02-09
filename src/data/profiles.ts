@@ -53,14 +53,14 @@ export const profileSections: ProfileSection[] = [
       "Für ernsthaftere OSS-Abenteuer, die ich auf best-effort Basis maintaine, gibt es den englischen Auftritt als CodeMonument.",
     links: [
       {
+        href: "https://bsky.app/profile/codemonument.com",
+        icon: "simple-icons:bluesky",
+        label: "bluesky: @codemonument.com",
+      },
+      {
         href: "https://github.com/codemonument",
         icon: "bxl:github",
         label: "github: codemonument",
-      },
-      {
-        href: "https://x.com/codemonument",
-        icon: "ph:x-logo-fill",
-        label: "x: codemonument",
       },
       {
         href: "https://www.npmjs.com/org/codemonument",
@@ -71,6 +71,24 @@ export const profileSections: ProfileSection[] = [
         href: "https://jsr.io/@codemonument",
         icon: "simple-icons:jsr",
         label: "jsr: @codemonument",
+      },
+      {
+        href: "https://x.com/codemonument",
+        icon: "ph:x-logo-fill",
+        label: "x: codemonument",
+      },
+    ],
+  },
+  {
+    id: "freelancing",
+    title: "Freelancing",
+    description:
+      "Ich biete digitale Klarheit für Ihr Unternehmen. Kontaktieren Sie mich!",
+    links: [
+      {
+        href: "https://consulting.jesuiter.com/",
+        icon: "ph:globe-fill",
+        label: "consulting.jesuiter.com",
       },
     ],
   },
