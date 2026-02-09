@@ -8,7 +8,6 @@ import { identity, profileSections } from "../../data/profiles";
 <article class="v5-pass">
   <header class="v5-header">
     <div>
-      <p>Digital Boarding Pass</p>
       <h1>{identity.name}</h1>
       <p>{identity.tagline}</p>
     </div>
@@ -20,7 +19,6 @@ import { identity, profileSections } from "../../data/profiles";
       profileSections.map((section, sectionIndex) => (
         <section class="v5-row" style={`--line:${sectionIndex};`}>
           <aside>
-            <span>Route {String(sectionIndex + 1).padStart(2, "0")}</span>
             <h2>{section.title}</h2>
             <p>{section.description}</p>
           </aside>
@@ -68,15 +66,6 @@ import { identity, profileSections } from "../../data/profiles";
     border-bottom: 1px dashed rgba(167, 243, 208, 0.28);
   }
 
-  .v5-header p:first-child {
-    font-family: "Chakra Petch", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-size: 0.73rem;
-    color: #86efac;
-    margin-bottom: 0.55rem;
-  }
-
   .v5-header h1 {
     font-family: "Fraunces", serif;
     font-size: clamp(1.8rem, 5vw, 3.2rem);
@@ -86,7 +75,7 @@ import { identity, profileSections } from "../../data/profiles";
     color: #ecfdf5;
   }
 
-  .v5-header p:last-child {
+  .v5-header p {
     font-family: "Chakra Petch", sans-serif;
     font-size: 0.95rem;
     max-width: 54ch;
@@ -122,14 +111,6 @@ import { identity, profileSections } from "../../data/profiles";
   .v5-row aside {
     padding: 0.95rem;
     border-right: 1px dashed rgba(167, 243, 208, 0.18);
-  }
-
-  .v5-row aside span {
-    font-family: "Chakra Petch", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.72rem;
-    color: #a7f3d0;
   }
 
   .v5-row h2 {
