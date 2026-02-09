@@ -22,7 +22,7 @@ export const profileSections: ProfileSection[] = [
     id: "dev",
     title: "Meine persönlichen Dev Accounts",
     description:
-      "Du interessierst dich für meine Seite als enthusiastischer Developer? Nice - hier entlang!",
+      "Du interessierst dich für meine Seite als enthusiastischer Fullstack- & Web Builder? Nice - hier entlang!",
     links: [
       {
         href: "https://github.com/bjesuiter",
