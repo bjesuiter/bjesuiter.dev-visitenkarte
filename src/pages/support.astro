@@ -9,12 +9,35 @@ import Layout from "../layouts/Layout.astro";
   <main class="support-shell">
     <section class="support-card">
       <p class="support-kicker">Support</p>
-      <h1>Danke, dass du meine Arbeit unterstützen möchtest.</h1>
+      <h1>Danke, dass du meine Arbeit unterstützen möchtest!</h1>
       <p>
-        Diese Seite ist der Einstieg für Support-Optionen. Wenn du möchtest, kann
-        ich hier als Nächstes konkrete Wege einbauen, z. B. GitHub Sponsors,
-        Ko-fi oder ein direktes Projekt-Sponsoring.
+        Hier findest direkte Links, unter denen du mich supporten kannst oder die mir eine kleine Provision geben, wenn du Sie nutzt.
+        DANKE!
       </p>
+      <ul class="support-links" aria-label="Support-Links">
+        <li>
+          <a
+            href="https://railway.com?referralCode=bjesuiter"
+            target="_blank"
+            rel="noreferrer"
+            class="support-link"
+          >
+            <span>Hosting via Railway.com</span>
+            <span aria-hidden="true">open</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://ko-fi.com/codemonument"
+            target="_blank"
+            rel="noreferrer"
+            class="support-link"
+          >
+            <span>Ko-Fi für bjesuiter/codemonument</span>
+            <span aria-hidden="true">open</span>
+          </a>
+        </li>
+      </ul>
       <div class="support-actions">
         <a href="/" class="support-back">Zurück zur Startseite</a>
       </div>
@@ -85,6 +108,37 @@ import Layout from "../layouts/Layout.astro";
 
   .support-actions {
     margin-top: 1.15rem;
+  }
+
+  .support-links {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .support-link {
+    display: grid;
+    align-items: center;
+    gap: 0.6rem;
+    grid-template-columns: 1fr auto;
+    font-family: "Chakra Petch", sans-serif;
+    padding: 0.65rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(134, 239, 172, 0.28);
+    background: rgba(2, 20, 15, 0.42);
+    color: #eafff5;
+    transition: border-color 170ms ease;
+  }
+
+  .support-link:hover {
+    border-color: #6ee7b7;
+  }
+
+  .support-link span:last-child {
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: #a7f3d0;
   }
 
   .support-back {
