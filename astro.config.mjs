@@ -10,7 +10,7 @@ export default defineConfig({
         bxl: ["github"],
         ph: ["x-logo-fill", "linkedin-logo-fill", "instagram-logo"],
         ion: ["logo-xing", "logo-stackoverflow", "logo-npm"],
-        "simple-icons": ["jsr"],
+        "simple-icons": ["jsr", "bluesky"],
       },
     }),
   ],

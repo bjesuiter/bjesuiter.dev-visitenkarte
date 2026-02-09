@@ -163,13 +163,23 @@ import { identity, profileSections } from "../../data/profiles";
   .v5-row svg {
     color: #6ee7b7;
     font-size: 1.05rem;
+    width: 1.05rem;
+    min-width: 1.05rem;
+    height: 1.05rem;
   }
 
   .v5-row a span:last-child {
+    display: none;
     text-transform: uppercase;
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     color: #a7f3d0;
+  }
+
+  @media (min-width: 380px) {
+    .v5-row a span:last-child {
+      display: block;
+    }
   }
 
   @keyframes v5-enter {

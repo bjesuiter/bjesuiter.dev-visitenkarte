@@ -30,19 +30,19 @@ export const profileSections: ProfileSection[] = [
         label: "github: bjesuiter",
       },
       {
-        href: "https://x.com/jesuiterb",
-        icon: "ph:x-logo-fill",
-        label: "x: jesuiterb",
-      },
-      {
         href: "https://www.npmjs.com/~bjesuiter",
         icon: "ion:logo-npm",
         label: "npm: bjesuiter",
       },
       {
-        href: "https://stackoverflow.com/users/5411086/benjamin-jesuiter",
-        icon: "ion:logo-stackoverflow",
-        label: "stackoverflow",
+        href: "https://bsky.app/profile/bjesuiter.de",
+        icon: "simple-icons:bluesky",
+        label: "bluesky: bjesuiter.de",
+      },
+      {
+        href: "https://x.com/jesuiterb",
+        icon: "ph:x-logo-fill",
+        label: "x: jesuiterb",
       },
     ],
   },
