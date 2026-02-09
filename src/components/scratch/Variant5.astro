@@ -49,14 +49,14 @@ import { identity, profileSections } from "../../data/profiles";
     margin: 0 auto;
     border-radius: 22px;
     overflow: hidden;
-    border: 1px solid rgba(226, 232, 240, 0.22);
+    border: 1px solid rgba(167, 243, 208, 0.24);
     background:
-      linear-gradient(90deg, rgba(248, 250, 252, 0.04) 1px, transparent 1px) 0
+      linear-gradient(90deg, rgba(220, 252, 231, 0.04) 1px, transparent 1px) 0
         0 / 25px 100%,
-      linear-gradient(0deg, rgba(248, 250, 252, 0.03) 1px, transparent 1px) 0
+      linear-gradient(0deg, rgba(220, 252, 231, 0.03) 1px, transparent 1px) 0
         0 / 100% 25px,
-      linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.82));
-    box-shadow: 0 24px 52px rgba(2, 6, 23, 0.55);
+      linear-gradient(135deg, rgba(7, 30, 24, 0.95), rgba(5, 24, 19, 0.84));
+    box-shadow: 0 24px 52px rgba(1, 10, 7, 0.55);
   }
 
   .v5-header {
@@ -65,7 +65,7 @@ import { identity, profileSections } from "../../data/profiles";
     gap: 0.8rem;
     align-items: flex-end;
     padding: clamp(1rem, 2.2vw, 1.5rem);
-    border-bottom: 1px dashed rgba(226, 232, 240, 0.28);
+    border-bottom: 1px dashed rgba(167, 243, 208, 0.28);
   }
 
   .v5-header p:first-child {
@@ -73,7 +73,7 @@ import { identity, profileSections } from "../../data/profiles";
     text-transform: uppercase;
     letter-spacing: 0.09em;
     font-size: 0.73rem;
-    color: #7dd3fc;
+    color: #86efac;
     margin-bottom: 0.55rem;
   }
 
@@ -83,14 +83,14 @@ import { identity, profileSections } from "../../data/profiles";
     line-height: 0.98;
     margin-bottom: 0.45rem;
     text-wrap: balance;
-    color: #f8fafc;
+    color: #ecfdf5;
   }
 
   .v5-header p:last-child {
     font-family: "Chakra Petch", sans-serif;
     font-size: 0.95rem;
     max-width: 54ch;
-    color: #e2e8f0;
+    color: #d1fae5;
   }
 
   .v5-header img {
@@ -99,7 +99,7 @@ import { identity, profileSections } from "../../data/profiles";
     object-fit: cover;
     object-position: top;
     border-radius: 14px;
-    border: 1px solid rgba(248, 250, 252, 0.42);
+    border: 1px solid rgba(209, 250, 229, 0.42);
     flex-shrink: 0;
   }
 
@@ -110,7 +110,7 @@ import { identity, profileSections } from "../../data/profiles";
   .v5-row {
     display: grid;
     grid-template-columns: minmax(220px, 310px) minmax(0, 1fr);
-    border-bottom: 1px dashed rgba(226, 232, 240, 0.2);
+    border-bottom: 1px dashed rgba(167, 243, 208, 0.18);
     animation: v5-enter 420ms ease both;
     animation-delay: calc(var(--line) * 90ms);
   }
@@ -121,7 +121,7 @@ import { identity, profileSections } from "../../data/profiles";
 
   .v5-row aside {
     padding: 0.95rem;
-    border-right: 1px dashed rgba(226, 232, 240, 0.2);
+    border-right: 1px dashed rgba(167, 243, 208, 0.18);
   }
 
   .v5-row aside span {
@@ -129,7 +129,7 @@ import { identity, profileSections } from "../../data/profiles";
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 0.72rem;
-    color: #fcd34d;
+    color: #a7f3d0;
   }
 
   .v5-row h2 {
@@ -137,13 +137,13 @@ import { identity, profileSections } from "../../data/profiles";
     font-size: clamp(1.15rem, 2vw, 1.45rem);
     margin: 0.3rem 0 0.5rem;
     line-height: 1.2;
-    color: #f8fafc;
+    color: #ecfdf5;
   }
 
   .v5-row aside p {
     font-family: "Chakra Petch", sans-serif;
     line-height: 1.45;
-    color: #cbd5e1;
+    color: #bdeed8;
   }
 
   .v5-row ul {
@@ -160,18 +160,18 @@ import { identity, profileSections } from "../../data/profiles";
     font-family: "Chakra Petch", sans-serif;
     padding: 0.4rem 0.55rem;
     border-radius: 10px;
-    border: 1px solid rgba(148, 163, 184, 0.32);
-    background: rgba(2, 6, 23, 0.36);
-    color: #f1f5f9;
+    border: 1px solid rgba(134, 239, 172, 0.28);
+    background: rgba(2, 20, 15, 0.42);
+    color: #eafff5;
     transition: border-color 170ms ease;
   }
 
   .v5-row a:hover {
-    border-color: #facc15;
+    border-color: #6ee7b7;
   }
 
   .v5-row svg {
-    color: #7dd3fc;
+    color: #6ee7b7;
     font-size: 1.05rem;
   }
 
@@ -179,7 +179,7 @@ import { identity, profileSections } from "../../data/profiles";
     text-transform: uppercase;
     font-size: 0.65rem;
     letter-spacing: 0.08em;
-    color: #fef08a;
+    color: #a7f3d0;
   }
 
   @keyframes v5-enter {
@@ -201,7 +201,7 @@ import { identity, profileSections } from "../../data/profiles";
 
     .v5-row aside {
       border-right: 0;
-      border-bottom: 1px dashed rgba(226, 232, 240, 0.2);
+      border-bottom: 1px dashed rgba(167, 243, 208, 0.18);
     }
 
     .v5-header {
