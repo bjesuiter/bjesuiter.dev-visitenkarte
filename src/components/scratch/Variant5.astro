@@ -267,54 +267,18 @@ import { identity, profileSections } from "../../data/profiles";
     }
   }
 
-  @media (min-width: 901px) {
-    .v5-header {
-      grid-template-columns: 1fr;
-      align-items: end;
-      padding: clamp(1.5rem, 4vw, 3rem);
-      min-height: clamp(380px, 44vw, 520px);
-    }
-
-    .v5-header::before {
-      display: block;
-      background: linear-gradient(
-        180deg,
-        rgba(3, 16, 12, 0.02) 0%,
-        rgba(3, 16, 12, 0.1) 42%,
-        rgba(3, 16, 12, 0.46) 72%,
-        rgba(3, 16, 12, 0.86) 100%
-      );
-    }
-
-    .v5-header-copy {
-      max-width: 46ch;
-      padding-right: 0;
-    }
-
-    .v5-header h1 {
-      font-size: clamp(2.3rem, 7vw, 4.7rem);
-      margin-bottom: 0.8rem;
-    }
-
-    .v5-header p {
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
-      max-width: 42ch;
-    }
-
+  @media (min-width: 970px) {
     .v5-hero-bg {
-      inset: 0;
-      width: 100%;
-      opacity: 1;
-      object-position: center 18%;
-    }
-
-    .v5-row {
-      grid-template-columns: minmax(220px, 310px) minmax(0, 1fr);
-    }
-
-    .v5-row aside {
-      border-right: 0;
-      border-bottom: 0;
+      top: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      left: auto;
+      width: 485px;
+      max-width: calc(50% - 1rem);
+      height: auto;
+      border-radius: 18px;
+      object-position: center 12%;
     }
   }
+
 </style>
