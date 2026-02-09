@@ -11,9 +11,7 @@
     "astro": "astro",
     "upgrade": "bunx @astrojs/upgrade",
     "astro-add": "astro add",
-    "prettier": "prettier --write .",
-    "deploy": "deployctl deploy --project=bjesuiter-visitenkarte --entrypoint=jsr:@std/http/file-server --include=dist",
-    "rollout": "bun run build && bun run deploy"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
