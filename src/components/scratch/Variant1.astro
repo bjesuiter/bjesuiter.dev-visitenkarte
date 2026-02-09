@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import profilePic from "../../assets/2024_profile_pic.jpg";
 import { identity, profileSections } from "../../data/profiles";
 ---
 
@@ -8,7 +10,7 @@ import { identity, profileSections } from "../../data/profiles";
     <p class="v1-kicker">Physical Contact Card / Neo Brutal</p>
     <h1>{identity.name}</h1>
     <p>{identity.tagline}</p>
-    <img src={identity.imagePath} alt={identity.imageAlt} loading="lazy" />
+    <Image src={profilePic} alt={identity.imageAlt} loading="lazy" />
   </header>
 
   <section class="v1-grid" aria-label="Profiles">

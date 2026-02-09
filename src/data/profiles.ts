@@ -15,7 +15,6 @@ export const identity = {
   name: "Benjamin Jesuiter",
   tagline: "Make the web the best place it can be!",
   imageAlt: "Profile Picture for Benjamin Jesuiter",
-  imagePath: "/2024_profile_pic.jpg",
 };
 
 export const profileSections: ProfileSection[] = [

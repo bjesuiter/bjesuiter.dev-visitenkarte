@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import profilePic from "../../assets/2024_profile_pic.jpg";
 import { identity, profileSections } from "../../data/profiles";
 ---
 
@@ -10,7 +12,7 @@ import { identity, profileSections } from "../../data/profiles";
       <h1>{identity.name}</h1>
       <p>{identity.tagline}</p>
     </div>
-    <img src={identity.imagePath} alt={identity.imageAlt} loading="lazy" />
+    <Image src={profilePic} alt={identity.imageAlt} loading="lazy" />
   </header>
 
   <section class="v5-rows" aria-label="Profiles">
@@ -93,7 +95,7 @@ import { identity, profileSections } from "../../data/profiles";
 
   .v5-header img {
     width: clamp(86px, 9.4vw, 122px);
-    aspect-ratio: 3/4;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: top;
     border-radius: 14px;

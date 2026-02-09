@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import profilePic from "../../assets/2024_profile_pic.jpg";
 import { identity, profileSections } from "../../data/profiles";
 ---
 
@@ -10,8 +12,8 @@ import { identity, profileSections } from "../../data/profiles";
     <p>{identity.tagline}</p>
   </header>
 
-  <img
-    src={identity.imagePath}
+  <Image
+    src={profilePic}
     alt={identity.imageAlt}
     class="v3-avatar"
     loading="lazy"
