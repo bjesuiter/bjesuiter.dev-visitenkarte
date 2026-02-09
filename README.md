@@ -23,10 +23,7 @@
 
 ---
 
-# Repo Log
+# Dev Infos 
 
-## 2025-02-15 Upgrade tailwind to v4
-
-```bash
-bunx --bun @tailwindcss/upgrade
-```
+Hosted on Deno Deploy (legacy)
+- Dashboard URL: https://dash.deno.com/projects/bjesuiter-visitenkarte

@@ -16,8 +16,8 @@ export const LANDS: LandData[] = [
     id: "coding-peaks",
     name: "The Coding Peaks",
     description: "Where algorithms meet the clouds",
-    size: 5,
-    position: { x: -0.3, y: 0.25 },
+    size: 4,
+    position: { x: -0.2, y: 0.2 },
     color: "#8B7355",
     accentColor: "#A0522D",
   },
@@ -26,7 +26,7 @@ export const LANDS: LandData[] = [
     name: "Open Source Forest",
     description: "Ancient trees of shared knowledge",
     size: 4,
-    position: { x: 0.35, y: 0.15 },
+    position: { x: 0.2, y: 0.25 },
     color: "#6B8E6B",
     accentColor: "#556B2F",
   },
@@ -34,8 +34,8 @@ export const LANDS: LandData[] = [
     id: "tech-archipelago",
     name: "Tech Archipelago",
     description: "Islands of innovation",
-    size: 4,
-    position: { x: 0.4, y: -0.3 },
+    size: 3,
+    position: { x: 0.35, y: -0.1 },
     color: "#7B9BA6",
     accentColor: "#5F9EA0",
   },
@@ -44,7 +44,7 @@ export const LANDS: LandData[] = [
     name: "Music Valley",
     description: "Where melodies flow like rivers",
     size: 3,
-    position: { x: -0.4, y: -0.2 },
+    position: { x: -0.35, y: -0.05 },
     color: "#9B7BB3",
     accentColor: "#8B668B",
   },
@@ -52,8 +52,8 @@ export const LANDS: LandData[] = [
     id: "gaming-plains",
     name: "Gaming Plains",
     description: "Vast fields of digital adventure",
-    size: 3,
-    position: { x: 0.0, y: -0.35 },
+    size: 4,
+    position: { x: 0.0, y: -0.25 },
     color: "#B8A07A",
     accentColor: "#D2B48C",
   },
@@ -61,21 +61,30 @@ export const LANDS: LandData[] = [
     id: "hardware-hills",
     name: "Hardware Hills",
     description: "Rolling hills of silicon and solder",
-    size: 2,
-    position: { x: -0.15, y: 0.4 },
+    size: 3,
+    position: { x: 0.0, y: 0.4 },
     color: "#A08070",
     accentColor: "#BC8F8F",
   },
 ];
+
+// Simple pseudo-random number generator for deterministic shapes
+function seededRandom(seed: number) {
+  const x = Math.sin(seed++) * 10000;
+  return x - Math.floor(x);
+}
 
 // Generate organic land shape vertices
 function generateLandShape(
   size: number,
   irregularity: number = 0.3,
   segments: number = 32,
+  seedOffset: number = 0,
 ): THREE.Vector2[] {
   const points: THREE.Vector2[] = [];
   const baseRadius = 0.08 + size * 0.04;
+
+  let seed = size * 100 + seedOffset;
 
   for (let i = 0; i < segments; i++) {
     const angle = (i / segments) * Math.PI * 2;
@@ -83,7 +92,7 @@ function generateLandShape(
     const noise1 = Math.sin(angle * 3) * 0.15;
     const noise2 = Math.sin(angle * 5 + 1.5) * 0.1;
     const noise3 = Math.sin(angle * 7 + 3) * 0.05;
-    const randomNoise = (Math.random() - 0.5) * irregularity * 0.1;
+    const randomNoise = (seededRandom(seed++) - 0.5) * irregularity * 0.1;
 
     const radius = baseRadius * (1 + noise1 + noise2 + noise3 + randomNoise);
     points.push(
@@ -96,28 +105,18 @@ function generateLandShape(
 
 // Create a land mesh with extrusion for 3D effect
 export function createLandGeometry(land: LandData): THREE.ExtrudeGeometry {
-  const shapePoints = generateLandShape(land.size, 0.4);
+  const seed = land.name.length;
+  const shapePoints = generateLandShape(land.size, 0.4, 40, seed);
   const shape = new THREE.Shape(shapePoints);
-
-  // Add some internal "lakes" or holes for larger lands
-  if (land.size >= 4) {
-    const holePoints = generateLandShape(1, 0.5, 16);
-    const hole = new THREE.Path(
-      holePoints.map(
-        (p) => new THREE.Vector2(p.x * 0.3 + 0.02, p.y * 0.3 + 0.01),
-      ),
-    );
-    shape.holes.push(hole);
-  }
 
   const extrudeSettings = {
     steps: 1,
-    depth: 0.02 + land.size * 0.008,
+    depth: 0.02,
     bevelEnabled: true,
-    bevelThickness: 0.005,
-    bevelSize: 0.005,
+    bevelThickness: 0.002,
+    bevelSize: 0.002,
     bevelOffset: 0,
-    bevelSegments: 3,
+    bevelSegments: 2,
   };
 
   return new THREE.ExtrudeGeometry(shape, extrudeSettings);

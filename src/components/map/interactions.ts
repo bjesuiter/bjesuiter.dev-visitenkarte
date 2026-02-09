@@ -5,8 +5,8 @@ export interface InteractionState {
   mousePosition: THREE.Vector2;
   normalizedMouse: THREE.Vector2;
   hoveredLand: string | null;
-  targetCameraOffset: THREE.Vector3;
-  currentCameraOffset: THREE.Vector3;
+  targetMapRotation: THREE.Vector2;
+  currentMapRotation: THREE.Vector2;
 }
 
 export function createInteractionState(): InteractionState {
@@ -14,8 +14,8 @@ export function createInteractionState(): InteractionState {
     mousePosition: new THREE.Vector2(),
     normalizedMouse: new THREE.Vector2(),
     hoveredLand: null,
-    targetCameraOffset: new THREE.Vector3(),
-    currentCameraOffset: new THREE.Vector3(),
+    targetMapRotation: new THREE.Vector2(),
+    currentMapRotation: new THREE.Vector2(),
   };
 }
 
@@ -26,6 +26,8 @@ export interface LandMeshData {
   currentElevation: number;
   targetHighlight: number;
   currentHighlight: number;
+  targetTilt: THREE.Vector2;
+  currentTilt: THREE.Vector2;
 }
 
 export class MapInteractionManager {
@@ -33,16 +35,19 @@ export class MapInteractionManager {
   private state: InteractionState;
   private landMeshes: Map<string, LandMeshData>;
   private camera: THREE.PerspectiveCamera;
-  private baseCameraPosition: THREE.Vector3;
   private labelElement: HTMLDivElement | null = null;
   private onLandClick: ((landId: string) => void) | null = null;
+  private mapGroup: THREE.Group | null = null;
 
   constructor(camera: THREE.PerspectiveCamera) {
     this.raycaster = new THREE.Raycaster();
     this.state = createInteractionState();
     this.landMeshes = new Map();
     this.camera = camera;
-    this.baseCameraPosition = camera.position.clone();
+  }
+
+  setMapGroup(group: THREE.Group): void {
+    this.mapGroup = group;
   }
 
   registerLandMesh(mesh: THREE.Mesh, land: LandData): void {
@@ -53,6 +58,8 @@ export class MapInteractionManager {
       currentElevation: 0,
       targetHighlight: 0,
       currentHighlight: 0,
+      targetTilt: new THREE.Vector2(),
+      currentTilt: new THREE.Vector2(),
     });
   }
 
@@ -75,11 +82,10 @@ export class MapInteractionManager {
     this.state.normalizedMouse.y =
       -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
-    const parallaxStrength = 0.05;
-    this.state.targetCameraOffset.x =
-      this.state.normalizedMouse.x * parallaxStrength;
-    this.state.targetCameraOffset.y =
-      this.state.normalizedMouse.y * parallaxStrength * 0.5;
+    const maxTilt = 0.15;
+
+    this.state.targetMapRotation.y = -this.state.normalizedMouse.x * maxTilt;
+    this.state.targetMapRotation.x = this.state.normalizedMouse.y * maxTilt;
   }
 
   handleClick(): void {
@@ -117,8 +123,17 @@ export class MapInteractionManager {
   private updateHoverStates(): void {
     for (const [id, data] of this.landMeshes) {
       const isHovered = id === this.state.hoveredLand;
-      data.targetElevation = isHovered ? 0.04 : 0;
+      data.targetElevation = isHovered ? 0.08 : 0;
       data.targetHighlight = isHovered ? 1 : 0;
+
+      if (isHovered) {
+        data.targetTilt.set(
+          this.state.normalizedMouse.y * 0.1,
+          -this.state.normalizedMouse.x * 0.1,
+        );
+      } else {
+        data.targetTilt.set(0, 0);
+      }
     }
   }
 
@@ -141,15 +156,15 @@ export class MapInteractionManager {
   update(deltaTime: number): void {
     const lerpFactor = 1 - Math.pow(0.001, deltaTime);
 
-    this.state.currentCameraOffset.lerp(
-      this.state.targetCameraOffset,
+    this.state.currentMapRotation.lerp(
+      this.state.targetMapRotation,
       lerpFactor,
     );
 
-    this.camera.position.x =
-      this.baseCameraPosition.x + this.state.currentCameraOffset.x;
-    this.camera.position.y =
-      this.baseCameraPosition.y + this.state.currentCameraOffset.y;
+    if (this.mapGroup) {
+      this.mapGroup.rotation.x = this.state.currentMapRotation.x;
+      this.mapGroup.rotation.y = this.state.currentMapRotation.y;
+    }
 
     for (const data of this.landMeshes.values()) {
       data.currentElevation = THREE.MathUtils.lerp(
@@ -164,7 +179,12 @@ export class MapInteractionManager {
         lerpFactor,
       );
 
+      data.currentTilt.lerp(data.targetTilt, lerpFactor);
+
       data.mesh.position.z = data.currentElevation;
+
+      data.mesh.rotation.x = -Math.PI * 0.05 + data.currentTilt.x;
+      data.mesh.rotation.y = data.currentTilt.y;
 
       const material = data.mesh.material as THREE.ShaderMaterial;
       if (material.uniforms && material.uniforms.uHover) {

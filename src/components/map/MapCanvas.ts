@@ -33,6 +33,7 @@ export class FantasyMapCanvas {
     uResolution: { value: THREE.Vector2 };
   };
   private landMaterials: THREE.ShaderMaterial[] = [];
+  private mapGroup: THREE.Group;
 
   constructor(container: HTMLElement, labelElement: HTMLDivElement) {
     this.container = container;
@@ -46,6 +47,8 @@ export class FantasyMapCanvas {
     };
 
     this.scene = new THREE.Scene();
+    this.mapGroup = new THREE.Group();
+    this.scene.add(this.mapGroup);
 
     const aspect = container.clientWidth / container.clientHeight;
     this.camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 100);
@@ -62,6 +65,7 @@ export class FantasyMapCanvas {
     container.appendChild(this.renderer.domElement);
 
     this.interactionManager = new MapInteractionManager(this.camera);
+    this.interactionManager.setMapGroup(this.mapGroup);
     this.interactionManager.setLabelElement(labelElement);
     this.interactionManager.setOnLandClick((landId) => {
       console.log(`Clicked on land: ${landId}`);
@@ -121,9 +125,10 @@ export class FantasyMapCanvas {
 
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(land.position.x, land.position.y, 0);
+
       mesh.rotation.x = -Math.PI * 0.05;
 
-      this.scene.add(mesh);
+      this.mapGroup.add(mesh);
       this.interactionManager.registerLandMesh(mesh, land);
     }
   }
@@ -171,7 +176,7 @@ export class FantasyMapCanvas {
         mesh.scale.setScalar(deco.scale);
         mesh.rotation.z = deco.rotation;
 
-        this.scene.add(mesh);
+        this.mapGroup.add(mesh);
       }
     }
   }
@@ -192,7 +197,7 @@ export class FantasyMapCanvas {
     const compassRose = new THREE.Mesh(geometry, material);
     compassRose.position.set(0.55, -0.45, 0.01);
     compassRose.scale.setScalar(0.8);
-    this.scene.add(compassRose);
+    this.mapGroup.add(compassRose);
 
     const innerGeometry = createCompassRoseGeometry();
     const innerMaterial = new THREE.ShaderMaterial({
@@ -210,7 +215,7 @@ export class FantasyMapCanvas {
     innerCompass.position.set(0.55, -0.45, 0.015);
     innerCompass.scale.setScalar(0.4);
     innerCompass.rotation.z = Math.PI / 8;
-    this.scene.add(innerCompass);
+    this.mapGroup.add(innerCompass);
   }
 
   private createSeaMonsters(): void {
@@ -238,7 +243,7 @@ export class FantasyMapCanvas {
       monster.position.set(pos.x, pos.y, 0.01);
       monster.scale.setScalar(pos.scale);
       monster.rotation.z = pos.rotation;
-      this.scene.add(monster);
+      this.mapGroup.add(monster);
     }
   }
 
@@ -283,7 +288,7 @@ export class FantasyMapCanvas {
       wave.position.set(pos.x, pos.y, 0.005);
       wave.rotation.z = pos.rotation;
       wave.scale.setScalar(0.5 + Math.random() * 0.5);
-      this.scene.add(wave);
+      this.mapGroup.add(wave);
     }
   }
 
@@ -320,7 +325,7 @@ export class FantasyMapCanvas {
 
     const titleMesh = new THREE.Mesh(geometry, material);
     titleMesh.position.set(0, 0.55, 0.02);
-    this.scene.add(titleMesh);
+    this.mapGroup.add(titleMesh);
   }
 
   private setupEventListeners(): void {

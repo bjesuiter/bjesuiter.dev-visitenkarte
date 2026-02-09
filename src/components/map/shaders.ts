@@ -12,7 +12,6 @@ export const paperVertexShader = `
     vPosition = position;
     
     vec3 pos = position;
-    pos.z += uHover * 0.03;
     
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
   }
