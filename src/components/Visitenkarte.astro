@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import profilePic from "../assets/2024_profile_pic.jpg";
 import SocialLink from "./Social-Link.astro";
 
 interface Props {
@@ -13,30 +15,20 @@ interface Props {
 <div
   class="text-foreground-light w-full min-w-[300px] shadow-slate-200/50 md:relative md:mx-auto md:my-10 md:h-4/5 md:w-4/5 md:max-w-[830px] md:overflow-y-auto md:rounded-lg md:border-2 md:bg-slate-800 md:p-4"
 >
-  <header
-    class="flex flex-col items-center gap-12"
-  >
+  <header class="flex flex-col items-center gap-12">
     <h1
       class="rounded-md border-none border-white pt-4 pb-4 text-2xl font-normal shadow-none shadow-slate-200/50 sm:text-3xl md:ml-4 md:text-left"
     >
       Benjamin Jesuiter
     </h1>
 
-    <!-- TODO: Implement astro optimized images! - might require switching hosting from deno to surge or even something else -->
-    <!-- <Image
+    <Image
       src={profilePic}
       alt="Profile Picture for Benjamin Jesuiter"
       width={250}
       height={250}
-    /> -->
-    <div
-      class="drop-shadow-glow02 h-[250px] w-[250px] rounded-full border-2 border-white bg-[url('/2024_profile_pic.jpg')] bg-cover bg-top bg-no-repeat"
-    >
-    </div>
-    <!-- <img
-    src="/2024_profile_pic.jpg"
-    class="md:absolute md:right-0 md:top-0 md:w-1/2 md:object-cover"
-  /> -->
+      class="drop-shadow-glow02 h-62.5 w-62.5 rounded-full border-2 border-white object-cover object-top"
+    />
 
     <!-- Tagline -->
     <div class="font-motto text-center sm:text-lg md:text-xl">
@@ -55,8 +47,8 @@ interface Props {
       <h3 class="text-left text-lg font-bold">
         Meine persönlichen Dev Accounts
       </h3>
-      Du interessierst dich für meine Seite als enthusiastischer Developer? Nice
-      - Hier entlang!
+      Du interessierst dich für meine Seite als enthusiastischer Developer? Nice -
+      Hier entlang!
       <SocialLink
         iconName="bxl:github"
         href="https://github.com/bjesuiter"
