@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Support · bjesuiter.de"
+  description="Support-Seite von Benjamin Jesuiter."
+>
+  <main class="support-shell">
+    <section class="support-card">
+      <p class="support-kicker">Support</p>
+      <h1>Danke, dass du meine Arbeit unterstützen möchtest.</h1>
+      <p>
+        Diese Seite ist der Einstieg für Support-Optionen. Wenn du möchtest, kann
+        ich hier als Nächstes konkrete Wege einbauen, z. B. GitHub Sponsors,
+        Ko-fi oder ein direktes Projekt-Sponsoring.
+      </p>
+      <div class="support-actions">
+        <a href="/" class="support-back">Zurück zur Startseite</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap");
+
+  .support-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 3vw, 2rem);
+    background:
+      linear-gradient(0deg, rgba(4, 18, 15, 0.93), rgba(4, 18, 15, 0.93)),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(110, 231, 183, 0.25),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 20% 86%,
+        rgba(52, 211, 153, 0.22),
+        transparent 30%
+      ),
+      #02110d;
+  }
+
+  .support-card {
+    width: min(760px, 100%);
+    padding: clamp(1.2rem, 3vw, 2rem);
+    border-radius: 20px;
+    border: 1px solid rgba(167, 243, 208, 0.24);
+    background:
+      linear-gradient(90deg, rgba(220, 252, 231, 0.02) 1px, transparent 1px) 0
+        0 / 34px 100%,
+      linear-gradient(0deg, rgba(220, 252, 231, 0.015) 1px, transparent 1px) 0
+        0 / 100% 34px,
+      linear-gradient(135deg, rgba(7, 30, 24, 0.95), rgba(5, 24, 19, 0.84));
+    box-shadow: 0 24px 52px rgba(1, 10, 7, 0.55);
+    color: #ecfdf5;
+  }
+
+  .support-kicker {
+    font-family: "Chakra Petch", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #6ee7b7;
+    margin-bottom: 0.45rem;
+  }
+
+  .support-card h1 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+    text-wrap: balance;
+  }
+
+  .support-card p {
+    font-family: "Chakra Petch", sans-serif;
+    line-height: 1.55;
+    color: #c9f7e3;
+    max-width: 60ch;
+  }
+
+  .support-actions {
+    margin-top: 1.15rem;
+  }
+
+  .support-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.62rem 1.05rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: #032015;
+    background: linear-gradient(90deg, #6ee7b7, #34d399);
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition:
+      transform 170ms ease,
+      filter 170ms ease;
+  }
+
+  .support-back:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+</style>

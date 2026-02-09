@@ -42,6 +42,15 @@ import { identity, profileSections } from "../../data/profiles";
       ))
     }
   </section>
+
+  <section class="v5-support" aria-label="Unterstützung">
+    <h2>Unterstütze meine Arbeit</h2>
+    <p>
+      Wenn dir meine Arbeit hilft oder gefällt, freue ich mich über Support.
+      Auf der nächsten Seite findest du die Optionen.
+    </p>
+    <a href="/support">Jetzt unterstützen</a>
+  </section>
 </article>
 
 <style is:global>
@@ -145,6 +154,56 @@ import { identity, profileSections } from "../../data/profiles";
 
   .v5-row:last-child {
     border-bottom: 0;
+  }
+
+  .v5-support {
+    display: grid;
+    gap: 0.9rem;
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+    border-top: 1px dashed rgba(167, 243, 208, 0.2);
+    background:
+      radial-gradient(
+        circle at 10% 10%,
+        rgba(110, 231, 183, 0.14),
+        transparent 28%
+      ),
+      linear-gradient(120deg, rgba(4, 24, 18, 0.9), rgba(5, 30, 22, 0.7));
+  }
+
+  .v5-support h2 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+    color: #ecfdf5;
+    line-height: 1.1;
+  }
+
+  .v5-support p {
+    font-family: "Chakra Petch", sans-serif;
+    color: #c9f7e3;
+    max-width: 58ch;
+    line-height: 1.5;
+  }
+
+  .v5-support a {
+    width: fit-content;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #032015;
+    background: linear-gradient(90deg, #6ee7b7, #34d399);
+    border-radius: 999px;
+    padding: 0.62rem 1.05rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.26);
+    transition:
+      transform 170ms ease,
+      filter 170ms ease;
+  }
+
+  .v5-support a:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
   }
 
   .v5-row aside {
