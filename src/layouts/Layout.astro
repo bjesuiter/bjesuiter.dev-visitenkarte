@@ -4,19 +4,47 @@ import "../css/global.css";
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonicalPath?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Persönliche Landingpage von Benjamin Jesuiter mit Links zu Development-, Business- und Social-Profilen.",
+  image = "/2024_profile_pic.jpg",
+  noindex = false,
+  canonicalPath,
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://bjesuiter.de");
+const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, site);
+const socialImageURL = new URL(image, site);
 ---
 
 <!doctype html>
-<html lang="en" class="bg-slate-800">
+<html lang="de" class="bg-slate-800">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL.href} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="bjesuiter.de" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={socialImageURL.href} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL.href} />
     <title>{title}</title>
     <!-- <script type="text/javascript">
 			const pos = {x: 0, y: 0};
