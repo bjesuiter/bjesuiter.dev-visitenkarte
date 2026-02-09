@@ -2,7 +2,20 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import profilePic from "../../assets/2024_profile_pic.jpg";
-import { identity, profileSections } from "../../data/profiles";
+import {
+  getLocalizedProfileContent,
+  type SupportedLocale,
+} from "../../data/profiles";
+
+interface Props {
+  locale?: SupportedLocale;
+  supportHref?: string;
+}
+
+const { locale = "de", supportHref = "/support" } = Astro.props;
+const { identity, profileSections, supportCta } =
+  getLocalizedProfileContent(locale);
+const profileAriaLabel = locale === "de" ? "Profile" : "Profiles";
 ---
 
 <article class="v5-pass">
@@ -19,7 +32,7 @@ import { identity, profileSections } from "../../data/profiles";
     </div>
   </header>
 
-  <section class="v5-rows" aria-label="Profiles">
+  <section class="v5-rows" aria-label={profileAriaLabel}>
     {
       profileSections.map((section, sectionIndex) => (
         <section class="v5-row" style={`--line:${sectionIndex};`}>
@@ -43,13 +56,10 @@ import { identity, profileSections } from "../../data/profiles";
     }
   </section>
 
-  <section class="v5-support" aria-label="Unterstützung">
-    <h2>Unterstütze meine Arbeit</h2>
-    <p>
-      Wenn dir meine Arbeit hilft oder gefällt, freue ich mich über Support.
-      Auf der nächsten Seite findest du die Optionen.
-    </p>
-    <a href="/support">Jetzt unterstützen</a>
+  <section class="v5-support" aria-label={supportCta.ariaLabel}>
+    <h2>{supportCta.title}</h2>
+    <p>{supportCta.description}</p>
+    <a href={supportHref}>{supportCta.linkLabel}</a>
   </section>
 </article>
 

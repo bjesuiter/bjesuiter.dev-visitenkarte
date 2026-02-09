@@ -8,6 +8,7 @@ interface Props {
   image?: string;
   noindex?: boolean;
   canonicalPath?: string;
+  lang?: "de" | "en";
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   image = "/2024_profile_pic.jpg",
   noindex = false,
   canonicalPath,
+  lang = "de",
 } = Astro.props;
 
 const site = Astro.site ?? new URL("https://bjesuiter.de");
@@ -24,10 +26,36 @@ const socialImageURL = new URL(image, site);
 ---
 
 <!doctype html>
-<html lang="de" class="bg-slate-800">
+<html lang={lang} class="bg-slate-800">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <script is:inline>
+      (() => {
+        const localizedRouteMap = {
+          "/": "/en/",
+          "/support": "/en/support/",
+        };
+
+        const normalizePathname = (pathname) =>
+          pathname.length > 1 && pathname.endsWith("/")
+            ? pathname.slice(0, -1)
+            : pathname;
+
+        const pathname = normalizePathname(window.location.pathname);
+        const englishRoute = localizedRouteMap[pathname];
+        if (!englishRoute) return;
+
+        const browserLanguages = navigator.languages ?? [navigator.language ?? ""];
+        const prefersEnglish = browserLanguages.some((locale) =>
+          locale.toLowerCase().startsWith("en"),
+        );
+        if (!prefersEnglish) return;
+
+        const suffix = `${window.location.search}${window.location.hash}`;
+        window.location.replace(`${englishRoute}${suffix}`);
+      })();
+    </script>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL.href} />
