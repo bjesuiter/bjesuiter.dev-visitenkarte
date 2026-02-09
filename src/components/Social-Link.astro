@@ -12,20 +12,37 @@ const { href, iconName, label, profile } = Astro.props satisfies Props;
 ---
 
 <a
-  class={"hover:drop-shadow-glow02 hover:motion-translate-y-loop-[10%] flex flex-row flex-wrap items-center"}
+  class:list={[
+    "group mt-1 inline-flex w-fit flex-row flex-wrap items-center rounded-md px-2 py-1 transition-[background-color,box-shadow] duration-200 focus-visible:outline-none",
+    {
+      "hover:bg-white/8 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.22)] focus-visible:bg-white/8 focus-visible:shadow-[0_0_0_2px_rgba(255,255,255,0.35)]":
+        profile === "private",
+      "hover:bg-codemonument-primary/12 hover:shadow-[0_0_0_1px_rgba(216,67,235,0.5)] focus-visible:bg-codemonument-primary/12 focus-visible:shadow-[0_0_0_2px_rgba(216,67,235,0.65)]":
+        profile === "codemonument",
+    },
+  ]}
   href={href}
 >
   <Icon
     name={iconName}
     class:list={[
-      "text-foreground-light my-4 mr-4 text-4xl",
-      { "text-codemonument-primary": profile === "codemonument" },
+      "my-3 mr-3 text-4xl opacity-90 transition-[color,opacity,filter] duration-200 group-hover:opacity-100",
+      {
+        "text-foreground-light group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.24)]":
+          profile === "private",
+        "text-codemonument-primary group-hover:text-codemonument-light group-hover:drop-shadow-[0_0_10px_rgba(216,67,235,0.4)]":
+          profile === "codemonument",
+      },
     ]}
   />
   <span
     class:list={[
-      "font-semibold",
-      { "text-codemonument-primary": profile === "codemonument" },
+      "relative font-semibold tracking-[0.01em] after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-200 group-hover:after:scale-x-100 group-focus-visible:after:scale-x-100",
+      {
+        "text-foreground-light": profile === "private",
+        "text-codemonument-primary group-hover:text-codemonument-light":
+          profile === "codemonument",
+      },
     ]}>{label}</span
   >
 </a>
