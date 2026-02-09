@@ -27,6 +27,7 @@ Deployment note:
 - Use 2-space indentation in `.astro`, `.ts`, `.css`, and config files.
 - Keep component files consistent with current naming style in this repo (`PascalCase` or `Pascal-Kebab`, e.g. `Social-Link.astro`).
 - Use Tailwind utility classes and Astro `class:list` patterns where conditional styling is needed.
+- CSS approach: mobile-first. Define base styles as the default, then use media breakpoints to overwrite parts or all of an element’s base styles.
 - Run `bun run prettier` before opening a PR.
 
 ## Testing Guidelines
