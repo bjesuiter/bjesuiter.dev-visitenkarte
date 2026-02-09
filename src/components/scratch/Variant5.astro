@@ -62,6 +62,7 @@ import { identity, profileSections } from "../../data/profiles";
     grid-template-columns: 1fr;
     gap: 0.9rem;
     align-items: start;
+    justify-items: center;
     padding: clamp(1.1rem, 3.4vw, 1.8rem);
     min-height: unset;
     border-bottom: 1px dashed rgba(167, 243, 208, 0.28);
@@ -69,6 +70,7 @@ import { identity, profileSections } from "../../data/profiles";
 
   .v5-header > div {
     max-width: 54ch;
+    text-align: center;
   }
 
   .v5-header h1 {
@@ -97,7 +99,7 @@ import { identity, profileSections } from "../../data/profiles";
     border: 1px solid rgba(209, 250, 229, 0.52);
     box-shadow: 0 20px 40px rgba(1, 10, 7, 0.45);
     flex-shrink: 0;
-    justify-self: start;
+    justify-self: center;
   }
 
   .v5-rows {
@@ -198,8 +200,13 @@ import { identity, profileSections } from "../../data/profiles";
     .v5-header {
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: end;
+      justify-items: stretch;
       gap: 1rem;
       min-height: clamp(180px, 28vw, 250px);
+    }
+
+    .v5-header > div {
+      text-align: left;
     }
 
     .v5-header img {
