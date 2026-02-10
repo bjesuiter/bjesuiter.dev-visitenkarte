@@ -56,6 +56,17 @@ const profileAriaLabel = locale === "de" ? "Profile" : "Profiles";
     }
   </section>
 
+  <section class="v5-verification" aria-label="Verification">
+    <h2>Verification</h2>
+    <p>
+      With this website it's possible to proof that i own the domains and social
+      accounts i say. It uses atproto under the hood
+    </p>
+    <a href="https://keytrace.dev/@bjesuiter.de" target="_blank" rel="noreferrer">
+      keytrace.dev/@bjesuiter.de
+    </a>
+  </section>
+
   <section class="v5-support" aria-label={supportCta.ariaLabel}>
     <h2>{supportCta.title}</h2>
     <p>{supportCta.description}</p>
@@ -164,6 +175,55 @@ const profileAriaLabel = locale === "de" ? "Profile" : "Profiles";
 
   .v5-row:last-child {
     border-bottom: 0;
+  }
+
+  .v5-verification {
+    display: grid;
+    gap: 0.85rem;
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+    border-top: 1px dashed rgba(167, 243, 208, 0.2);
+    background:
+      radial-gradient(
+        circle at 90% 20%,
+        rgba(110, 231, 183, 0.12),
+        transparent 30%
+      ),
+      linear-gradient(120deg, rgba(5, 26, 20, 0.92), rgba(5, 30, 22, 0.72));
+  }
+
+  .v5-verification h2 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    color: #ecfdf5;
+    line-height: 1.1;
+  }
+
+  .v5-verification p {
+    font-family: "Chakra Petch", sans-serif;
+    color: #c9f7e3;
+    max-width: 60ch;
+    line-height: 1.5;
+  }
+
+  .v5-verification a {
+    width: fit-content;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #d9f9ec;
+    border-radius: 999px;
+    padding: 0.55rem 1.05rem;
+    border: 1px solid rgba(110, 231, 183, 0.5);
+    background: rgba(3, 24, 18, 0.6);
+    transition:
+      transform 170ms ease,
+      border-color 170ms ease;
+  }
+
+  .v5-verification a:hover {
+    transform: translateY(-1px);
+    border-color: #6ee7b7;
   }
 
   .v5-support {
